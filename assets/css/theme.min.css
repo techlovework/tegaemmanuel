@@ -1824,7 +1824,7 @@ body.loaded:after {
     visibility: hidden;
     opacity: 0;
     -webkit-transition: ease-out 0.4s;
-    transition: ease-out 3.0s
+    transition: ease-out 1.0s
 }
 
 @-webkit-keyframes loader {
