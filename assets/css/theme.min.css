@@ -1823,8 +1823,8 @@ body.loaded:after {
 .loaded .preloader {
     visibility: hidden;
     opacity: 0;
-    -webkit-transition: ease-out 1.0s;
-    transition: ease-out 1.0s
+    -webkit-transition: ease-out 0.4s;
+    transition: ease-out .4s
 }
 
 @-webkit-keyframes loader {
