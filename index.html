@@ -14,7 +14,7 @@
         <meta name="keywords" content="">
 		<title>Tega Emmanuel - Personal Portfolio</title>
 		<!-- Favicon -->
-        <link href="assets/images/favicon.png" rel="shortcut icon">
+        <link href="" rel="shortcut icon">
 		<!-- CSS -->
 		<link href="assets/plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
 		<link href="assets/plugins/magnific-popup/magnific-popup.min.css" rel="stylesheet">
@@ -30,6 +30,72 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
+		<style>
+			/* Button Styling */
+			.read-more-btn {
+			  background: none;
+			  padding: 10px;
+			  font-size: 16px;
+			  border: solid 1px #ffffff;
+			  color: #ffffff;
+			  text-decoration: none;
+			  cursor: pointer;
+			}
+		
+			/* Modal Background */
+			.modal-overlay {
+			  display: none;
+			  position: fixed;
+			  top: 0;
+			  left: 0;
+			  width: 100%;
+			  height: 100%;
+			  background: rgba(0, 0, 0, 0.7);
+			  justify-content: center;
+			  align-items: center;
+			}
+		
+			/* Modal Content */
+			.modal-content {
+			  background: #00000077; /* Black background */
+			  color: #ffffff; /* White font color */
+			  padding: 20px;
+			  border-radius: 8px;
+			  width: 80%; /* 80% of the viewport width */
+			  height: 80%; /* 80% of the viewport height */
+			  text-align: center;
+			  position: relative;
+			  overflow-y: auto; /* Allow scrolling within the modal if content overflows */
+			  border: solid 1px #ffffff;
+			}
+		
+			/* Close Button */
+			.close-btn {
+			  position: absolute;
+			  top: 10px;
+			  right: 10px;
+			  background: none;
+			  border: none;
+			  color: #ffffff;
+			  font-size: 18px;
+			  cursor: pointer;
+			}
+		  </style>
+
+
+	<!-- Swiper CSS -->
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+	<style>
+	  /* Client box styling */
+	  .client-box img {
+		max-width: 150px;
+	  }
+	  /* Ensure Swiper container displays correctly */
+	  .swiper-container {
+		width: 100%;
+		height: 100%;
+	  }
+	</style>
 
 	</head>
 	<body data-preloader="true">
@@ -44,7 +110,9 @@
 				<div class="header-wrapper">
 					<!-- Header Logo -->
 					<div class="header-logo">
+						<a class="nav-link" href="#about">
 						<h2 style="font-family: poppins; font-weight: 700;">TEGA</h2>
+						</a>
 					</div>
 					<!-- Header Nav -->
 					<div class="header-nav">
@@ -149,30 +217,68 @@
 						</div>
 						<!-- end Hero Avatar -->
 					</div>
-					<div class="col-12 col-lg-4 order-lg-1">
-						<div class="row g-4 g-lg-5">
-							<div class="col-12 col-md-4 col-lg-12">
-								<h6 class="sm-heading" style="font-family: poppins; font-weight: 700;">
-									Biography
-								</h6>
-								<p>
-									Tega Emmanuel is the Founder and CEO of <a href="https://lovevfxstudios.vercel.app" style="color: #15ACE1;">LoveVFX Studios</a>, a leading innovator in the tech industry. With extensive expertise spanning web development, animation, cybersecurity analysis, and digital design, Tega has built a reputation for delivering high-quality solutions across multiple disciplines.
-								<br>
-								</p>
-								<br>
+					<span style="font-family: poppins; font-weight: 700; text-align: center;">
+						Follower of Christ <i class="fa-solid fa-cross fa-beat"></i>
+						<br>
+						<span style="font-weight: 200; text-align: center;">Philippians 4:13</span>
+					</span>
 
-								<a href="" style="background: none;
-													padding: 10px;
-													font-size: 16px;
-													border: solid 1px #ffffff;">
-									READ MORE
-								</a>
+
+
+
+	<!-- Biography Starts -->
+	<div class="col-12 col-lg-4 order-lg-1">
+		<div class="row g-4 g-lg-5">
+			<div class="col-12 col-md-4 col-lg-12">
+				<h6 class="sm-heading" style="font-family: poppins; font-weight: 700;">
+					Biography
+				</h6>
+				<p>
+					Tega Emmanuel, an innovator in the tech industry is the Founder and CEO of <a href="https://lovevfxstudios.vercel.app" style="color: #15ACE1;">LoveVFX Studios</a>. Tega has a wide range of skills in web development, animation, cybersecurity, and digital design. He is known for providing top-quality work across all these areas.
+				</p>
+				<br>
+
+				<!-- Read More Button -->
+
+  <!-- Read More Button -->
+  <a href="javascript:void(0);" class="read-more-btn" onclick="openModal()">READ MORE</a>
+
+  <!-- Modal Structure -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal()">✖</button>
+		<h6 class="sm-heading" style="font-family: poppins; font-weight: 700;">
+			Biography
+		</h6>
+			<br>
+			<p>
+				Tega Emmanuel, an innovator in the tech industry is the Founder and CEO of <a href="https://lovevfxstudios.vercel.app" style="color: #15ACE1;">LoveVFX Studios</a>. Tega has a wide range of skills in web development, animation, cybersecurity, and digital design. He is known for providing top-quality work across all these areas.
+			</p>
+			<br>
+    </div>
+  </div>
+
+  <script>
+    // Function to open the modal
+    function openModal() {
+      document.getElementById('modalOverlay').style.display = 'flex';
+      document.body.style.overflow = 'hidden'; // Disable scrolling
+    }
+
+    // Function to close the modal
+    function closeModal() {
+      document.getElementById('modalOverlay').style.display = 'none';
+      document.body.style.overflow = ''; // Enable scrolling
+    }
+  </script>
+
+  <!-- Biography Ends -->
 								<br><br>
 
 
 							</div>
 							
-							<div class="col-6 col-md-4 col-lg-12">
+							<div class="col- col-md-4 col-lg-12">
 								<h6 class="sm-heading">Contact me</h6>
 								<ul class="list-inline">
 									<li>
@@ -191,6 +297,18 @@
 										<a class="button-circle button-circle-sm" href="https://instagram.com/tega_jnr">
 											<i class="bi bi-instagram"></i>
 											<i class="bi bi-instagram"></i>
+										</a>
+									</li>
+									<li>
+										<a class="button-circle button-circle-sm" href="https://x.com/tega_jnr">
+											<i class="fa-brands fa-x-twitter"></i>
+											<i class="fa-brands fa-x-twitter"></i>
+										</a>
+									</li>
+									<li>
+										<a class="button-circle button-circle-sm" href="https://youtube.com/lovevfxstudios">
+											<i class="fa-brands fa-youtube"></i>
+											<i class="fa-brands fa-youtube"></i>
 										</a>
 									</li>
 								</ul>
@@ -238,7 +356,8 @@
 											<h3>Development</h3>
 										</div>
 										<div class="service-text">
-											<p>I am a fullstack developer that specializes in HTML, CSS, Javascript, PHP, SQL, React.
+											<p>
+												I am a full-stack developer specializing in HTML, CSS, JavaScript, PHP, SQL, and React.
 											</p>
 										</div>
 									</div>
@@ -250,12 +369,12 @@
 										<div class="service-order">
 										</div>
 										<div class="service-title">
-											<i class="bi bi-laptop"></i>
+											<i class="fa-solid fa-robot"></i>
 											<h3>Animation</h3>
 										</div>
 										<div class="service-text">
 											<p>
-												I am an animator that specializes in Blender, Photoshop, Unreal Engine.
+												I am an animator that specializing in Blender, Adobe Photoshop, Unreal Engine.
 											</p>
 										</div>
 									</div>
@@ -272,7 +391,7 @@
 										</div>
 										<div class="service-text">
 											<p>
-												I am graphic designer that specializes in Photoshop.
+												I am graphic designer specializing in Adobe Photoshop.
 											</p>
 										</div>
 									</div>
@@ -285,12 +404,12 @@
 										<div class="service-order">
 										</div>
 										<div class="service-title">
-											<i class="bi bi-laptop"></i>
+											<i class="fa-solid fa-shield-halved"></i>
 											<h3>Cyber Security</h3>
 										</div>
 										<div class="service-text">
 											<p>
-												I am a cybersecurity analyst that specializes in kali linux, pen testing, firewalls, wireshark, metasploit, and many more.
+												I am a cybersecurity analyst specializing in Kali Linux, Pen Testing, Firewalls, Wireshark, Metasploit, and many more.
 											</p>
 										</div>
 									</div>
@@ -303,12 +422,12 @@
 										<div class="service-order">
 										</div>
 										<div class="service-title">
-											<i class="bi bi-laptop"></i>
+											<i class="fa-solid fa-video"></i>
 											<h3>Video Editing</h3>
 										</div>
 										<div class="service-text">
 											<p>
-												I am a video editor that specializes in Adobe Premier Pro and Adobe After Effects.
+												I am a video editor specializing in Adobe Premier Pro and Adobe After Effects.
 										</p>
 										</div>
 									</div>
@@ -323,64 +442,63 @@
 			<!-- end Services section -->
 
 			<!-- Clients section -->
-			<div class="section pt-0">
-				<div class="container">
-					<div class="swiper clients-slider">
-						<div class="swiper-wrapper">
-							<!-- Slider Item 1 -->
-							<div class="swiper-slide">
-								<div class="client-box">
-									<a href="#">
-										<img src="assets/images/client-1-light.png" alt="">
-									</a>
-								</div>
-							</div>
-							<!-- Slider Item 2 -->
-							<div class="swiper-slide">
-								<div class="client-box">
-									<a href="#">
-										<img src="assets/images/client-2-light.png" alt="">
-									</a>
-								</div>
-							</div>
-							<!-- Slider Item 3 -->
-							<div class="swiper-slide">
-								<div class="client-box">
-									<a href="#">
-										<img src="assets/images/client-3-light.png" alt="">
-									</a>
-								</div>
-							</div>
-							<!-- Slider Item 4 -->
-							<div class="swiper-slide">
-								<div class="client-box">
-									<a href="#">
-										<img src="assets/images/client-4-light.png" alt="">
-									</a>
-								</div>
-							</div>
-							<!-- Slider Item 5 -->
-							<div class="swiper-slide">
-								<div class="client-box">
-									<a href="#">
-										<img src="assets/images/client-5-light.png" alt="">
-									</a>
-								</div>
-							</div>
-							<!-- Slider Item 6 -->
-							<div class="swiper-slide">
-								<div class="client-box">
-									<a href="#">
-										<img src="assets/images/client-6-light.png" alt="">
-									</a>
-								</div>
-							</div>
-							<!-- end Slider Item 6 -->
-						</div><!-- end swiper-wrapper -->
-					</div><!-- end clients-slider -->
-				</div><!-- end container -->
-			</div>
-			<!-- end Clients section -->
+  <div class="section pt-0">
+    <div class="container">
+      <div class="swiper clients-slider">
+        <div class="swiper-wrapper">
+          <!-- Slider Items -->
+          <div class="swiper-slide">
+            <div class="client-box">
+              <a href="#"><img src="assets/images/client-1-light.png" alt=""></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="client-box">
+              <a href="#"><img src="assets/images/client-2-light.png" alt=""></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="client-box">
+              <a href="#"><img src="assets/images/client-3-light.png" alt=""></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="client-box">
+              <a href="#"><img src="assets/images/client-4-light.png" alt=""></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="client-box">
+              <a href="#"><img src="assets/images/client-5-light.png" alt=""></a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="client-box">
+              <a href="#"><img src="assets/images/client-6-light.png" alt=""></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    // Wait for DOM to load before initializing Swiper
+    document.addEventListener('DOMContentLoaded', () => {
+      const swiper = new Swiper('.clients-slider', {
+        loop: true, // Infinite looping
+        autoplay: {
+          delay: 0000, // 3-second autoplay delay
+          disableOnInteraction: false // Continue autoplay after interaction
+        },
+        slidesPerView: 'auto', // Adjusts based on container size
+        spaceBetween: 20, // Space between slides
+        speed: 3000 // Transition speed in milliseconds
+      });
+    });
+  </script>
 
 			<!-- Portfolio section -->
 			<div id="portfolio" class="section-box">
@@ -611,58 +729,9 @@
 			<!-- Testimonial section -->
 			<div id="testimonial" class="section">
 				<div class="container">
-					<div class="swiper testimonial-slider">
-						<div class="swiper-wrapper">
-							<!-- Slider item 1 -->
-							<div class="swiper-slide">
-								<div class="testimonial-box">
-									<div class="testimonial-avatar">
-										<img src="assets/images/t_2.png" data-rjs="2" alt="">
-									</div>
-									<div class="testimonial-content">
-										<div class="mb-3">
-											<h3>Tega Emmanuel</h3>
-											<span class="sm-heading text-white">Founder & CEO of LoveVFX Studios</span>
-										</div>
-										<p class="fs-4 fw-normal fst-italic line-height-140">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
-									</div>
-								</div>
-							</div>
-							<!-- Slider item 2 -->
-							<div class="swiper-slide">
-								<div class="testimonial-box">
-									<div class="testimonial-avatar">
-										<img src="assets/images/testimonial-2.jpg" data-rjs="2" alt="">
-									</div>
-									<div class="testimonial-content">
-										<div class="mb-3">
-											<h3>Bradley Mendez</h3>
-											<span class="sm-heading text-white">CTO - Company</span>
-										</div>
-										<p class="fs-4 fw-normal fst-italic line-height-140">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
-									</div>
-								</div>
-							</div>
-							<!-- Slider item 3 -->
-							<div class="swiper-slide">
-								<div class="testimonial-box">
-									<div class="testimonial-avatar">
-										<img src="assets/images/testimonial-3.jpg" data-rjs="2" alt="">
-									</div>
-									<div class="testimonial-content">
-										<div class="mb-3">
-											<h3>Linda Adams</h3>
-											<span class="sm-heading text-white">Project Manager</span>
-										</div>
-										<p class="fs-4 fw-normal fst-italic line-height-140">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- Slider Pagination Progress -->
-						<div class="swiper-testimonial-pagination"></div>
-						<!-- end Slider Pagination Progress -->
-					</div>
+							
+						
+
 				</div><!-- end container -->
 			</div>
 			<!-- end Testimonial section -->
@@ -885,6 +954,21 @@
 					</div>
 					<br><br>
 					<!-- end row -->
+
+					<br>
+					<center>
+						<div class="hero-avatar">
+							<img src="assets/images/t_black.png" data-rjs="2" alt="">
+						</div><br>
+						<p style="font-family: poppins; font-size: large; font-weight: 500;">
+							TEGA EMMANUEL
+						</p>
+						<p style="font-family: poppins; font-size: large; font-weight: 300;">
+							Founder and CEO of <a href="https://lovevfxstudios.vercel.app" style="color: #15ACE1;">LoveVFX Studios</a>
+						</p>
+					</center>
+					<br>
+
 					<!-- Google Maps -->
 					<div>
 						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.2001580893148!2d7.408951373996886!3d6.866601993131999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1044e7defeff9725%3A0xffb8a28c30660e7d!2sUniversity%20of%20Nigeria%2C%20UNN%20Nsukka!5e0!3m2!1sen!2sng!4v1731345078327!5m2!1sen!2sng" width="100%" height="400" style="border:0; padding: 20px;" allowfullscreen="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
